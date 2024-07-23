@@ -2,7 +2,7 @@
  * Grammar:
  *   EXPRESSION := SIMPLE_EXPRESSION [ PIPE ]
  *   PIPE := "|" FILTER [ PIPE ]
- *   FILTER := FILTER_ID [ ":" SIMPLE_EXPRESSION ]
+ *   FILTER := FILTER_ID [ ":" SIMPLE_EXPREN ]
  *   SIMPLE_EXPRESSION := LITERAL_EXPRESSION | VAR_EXPRESSION
  *   LITERAL_EXPRESSION := STRING | NUMBER | BOOLEAN
  *   STRING := STRING_QUOTE | STRING_DBQUOTE
@@ -57,7 +57,7 @@ export function getValueFromExpr(scope, expr) {
     nextScope,
     nextEvaluatedExpr,
     rest,
-  } = parseExpression(rootScope, scope, '', expr);
+  } 
   if (rest) {
     throw new ValueException(`unexpected token "${rest}", expected end of expression`);
   }
